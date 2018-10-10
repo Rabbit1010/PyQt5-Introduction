@@ -44,3 +44,32 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "PushButton"))
 ```
+To run the class, you can use the following code
+```python
+if __name__ == "__main__":
+    # Safe start for Spyder IDE
+    app = QtCore.QCoreApplication.instance()
+    if app is None:
+        app = QtWidgets.QApplication(sys.argv)
+
+    # Initialize and run Qt UI        
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+
+    # Exiting UI
+    if any('SPYDER' in name for name in os.environ):
+        # Safe exit for Spyder IDE
+        app.exec_()
+    else:        
+        sys.exit(app.exec_())
+```
+To connect function button when on click
+```python
+def retranslateUi(self, MainWindow):
+    self.pushButton.clicked.connect(lambda: self.Quick_Demo("test_String"))
+
+def Quick_Demo(self, str):
+    print("Quick Demo %s"%(str))
+```
