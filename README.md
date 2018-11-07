@@ -1,23 +1,29 @@
 # PyQt5-Introduction
-An introduction on how to use PyQt5 to create GUI application in Python
+Qt is a C++ framework for creating native-looking GUI application in desktop or mobile or any other platform. PyQt5 is a Python wrapper for Qt.
 
-# Installation
-Use whatever works
+This is an simple introduction on how to create GUI application in Python.
+
+# PyQt5 Installation
+Use pip installation, (use one of the which it works)
 ```
 pip3 install pyqt5
 pip install pyqt5
 pip install PtQt5
 ```
+Or use Anaconda Installation
+```
+conda install -c anaconda pyqt
+```
 
 # Qt Designer
-Use Qt Designer (not Qt Creator) to drag-and-drop UI elements.
+Use Qt Designer (not Qt Creator) to drag-and-drop design UI elements.
 Qt Designer will save your file in .ui format.
-Use the following command in cmd to make a .py class file
+Use the following command in commnad line to make a .py class file
 ```
 pyuic5 FILENAME.ui -o FILENAME.py
 ```
 
-# In Python
+# Python GUI class
 In the .py class there would be a class like this
 ```python
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -44,7 +50,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "PushButton"))
 ```
-To run the class, you can use the following code
+
+# Starting the GUI object
+To run the GUI class, you can use the following code
 ```python
 if __name__ == "__main__":
     # Safe start for Spyder IDE
@@ -65,7 +73,9 @@ if __name__ == "__main__":
     else:        
         sys.exit(app.exec_())
 ```
-To connect function button when on click
+
+# Connect function call to a button
+To connect function button when a button onClick
 ```python
 def retranslateUi(self, MainWindow):
     self.pushButton.clicked.connect(lambda: self.Quick_Demo("test_String"))
