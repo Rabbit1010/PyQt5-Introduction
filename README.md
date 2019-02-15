@@ -6,19 +6,21 @@ This is an simple introduction on how to create GUI application in Python.
 # PyQt5 Installation
 Use pip installation, (use one of the which it works)
 ```
-pip3 install pyqt5
-pip install pyqt5
-pip install PtQt5
+pip install PyQt5
+pip3 install PyQt5
 ```
 Or use Anaconda Installation
 ```
 conda install -c anaconda pyqt
 ```
 
+# Download Qt
+Download Qt [here](https://www.qt.io/download), choosng the open source version is enough.
+
 # Qt Designer
 Use Qt Designer (not Qt Creator) to drag-and-drop design UI elements.
 Qt Designer will save your file in .ui format.
-Use the following command in commnad line to make a .py class file
+Use the following command in conda or windows commnad line to make a .py class file
 ```
 pyuic5 FILENAME.ui -o FILENAME.py
 ```
@@ -54,6 +56,8 @@ class Ui_MainWindow(object):
 # Starting the GUI object
 To run the GUI class, you can use the following code
 ```python
+import sys, os
+
 if __name__ == "__main__":
     # Safe start for Spyder IDE
     app = QtCore.QCoreApplication.instance()
